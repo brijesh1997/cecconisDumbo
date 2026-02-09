@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { menuItems } from '../data/menuData'; // Ensure this data structure supports filtering
 import '../styles/Menu.css';
 
