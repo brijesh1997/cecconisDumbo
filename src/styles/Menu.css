@@ -1,0 +1,142 @@
+/* Menu.css - Soul Kitchen Theme */
+
+.menu-page-container {
+    padding-top: 8rem;
+    /* Space for fixed navbar */
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+}
+
+.menu-page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.menu-page-header .subtitle {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.menu-page-header .title {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* Tabs */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-btn:hover {
+    color: #fff;
+}
+
+.tab-btn.active {
+    color: #fff;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    /* Align with border-bottom of container */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+/* Menu Grid */
+.menu-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem 4rem;
+    /* Row gap, Col gap */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .menu-grid-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.menu-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Very subtle separator */
+}
+
+/* Remove last border in column ? Optional */
+
+.menu-item-info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.menu-item-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.menu-item-desc {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.menu-item-price {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/* Footer Actions */
+.menu-footer-actions {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.dietary-note {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}

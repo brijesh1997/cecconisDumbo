@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* Soul Kitchen Theme Colors */
+  --color-bg: #0A0B0A;
+  --color-bg-alt: #111111;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #999999;
+  --color-accent: #FFFFFF;
+  /* Primary Accent is White */
+  --color-border: rgba(255, 255, 255, 0.2);
+
+  /* Typography */
+  --font-heading: 'Jost', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Spacing */
+  --spacing-container: 1400px;
+  /* Wider container for modern look */
+  --spacing-section: 8rem;
+
+  /* Transitions */
+  --transition-fast: all 0.3s ease;
+  --transition-slow: all 0.6s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--color-text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Soul Kitchen Style Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn:hover {
+  border-color: #fff;
+  background: #fff;
+  color: #000;
+}
+
+.btn-primary {
+  /* Same as base btn for this theme, maybe slightly thicker border if needed */
+  border: 1px solid #fff;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: #000;
+}

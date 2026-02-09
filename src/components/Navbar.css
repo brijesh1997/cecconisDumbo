@@ -1,0 +1,254 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 2rem 0;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background-color: rgba(10, 11, 10, 0.95);
+    padding: 1rem 0;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Grid Layout */
+.navbar-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+/* Modules */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link-left,
+.nav-link-right {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: #fff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    display: none;
+    /* Hidden on mobile */
+}
+
+@media (min-width: 768px) {
+
+    .nav-link-left,
+    .nav-link-right {
+        display: block;
+    }
+}
+
+.nav-link-left:hover,
+.nav-link-right:hover {
+    color: var(--color-text-muted);
+}
+
+.nav-center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Elements */
+.menu-toggle {
+    color: #fff;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.btn-navbar {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.btn-navbar:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Overlay Menu */
+.overlay-menu {
+    position: fixed;
+    inset: 0;
+    background-color: #0A0B0A;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #fff;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.overlay-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.overlay-label {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.overlay-link {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.overlay-link:hover {
+    color: var(--color-text-muted);
+    /* Inverted hover for this theme */
+    font-style: italic;
+    /* A Soul Kitchen touch */
+}
+
+.overlay-info {
+    margin-top: 3rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.overlay-info p {
+    margin-bottom: 0.5rem;
+}
+
+.overlay-socials {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-center {
+        justify-content: flex-start;
+        /* Align logo left on mobile if needed, or keep center */
+        grid-column: span 2;
+        order: -1;
+        margin-bottom: 1rem;
+        display: none;
+        /* Hide center logo text on smaller screens if layout gets cramped, or adjust */
+    }
+
+    /* Soul Kitchen Mobile Layout: Logo Top Left, Menu Icon Top Right ? 
+       Or commonly: Menu Left, Logo Center, Book Right. 
+       Let's stick to Menu Left, Logo Center, Book Right for mobile too but scale down.
+    */
+    .navbar-grid {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-center {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .btn-navbar {
+        padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .overlay-link {
+        font-size: 2rem;
+    }
+}
